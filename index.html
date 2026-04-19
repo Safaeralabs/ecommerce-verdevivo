@@ -13,6 +13,8 @@
   <div class="bg-orb orb-1"></div>
   <div class="bg-orb orb-2"></div>
 
+  <p class="promo-bar" data-es="Envio gratis en pedidos superiores a 45 EUR / 49 USD" data-en="Free shipping on orders over 45 EUR / 49 USD">Envio gratis en pedidos superiores a 45 EUR / 49 USD</p>
+
   <header class="hero container reveal">
     <nav class="topbar">
       <div class="brand-wrap">
@@ -25,6 +27,10 @@
       <div class="top-actions">
         <a class="pill-link" href="admin.html">Admin</a>
         <button id="langToggle" class="btn ghost" aria-label="Cambiar idioma">EN</button>
+        <button id="cartBtn" class="cart-btn" aria-label="Abrir carrito">
+          <span data-es="Carrito" data-en="Cart">Carrito</span>
+          <strong id="cartCount">0</strong>
+        </button>
       </div>
     </nav>
 
@@ -37,6 +43,11 @@
           <a class="btn" href="#catalogo" data-es="Explorar productos" data-en="Explore products">Explorar productos</a>
           <a class="btn ghost" href="customer-service.html" data-es="Atencion al cliente" data-en="Customer care">Atencion al cliente</a>
         </div>
+        <div class="proof-strip">
+          <span data-es="+4,200 clientes satisfechos" data-en="+4,200 happy customers">+4,200 clientes satisfechos</span>
+          <span data-es="98% valoracion positiva" data-en="98% positive rating">98% valoracion positiva</span>
+          <span data-es="Pago seguro" data-en="Secure checkout">Pago seguro</span>
+        </div>
       </div>
 
       <aside class="hero-panel reveal">
@@ -46,6 +57,10 @@
           <li data-es="Empaque reciclable y envios neutros" data-en="Recyclable packaging and neutral shipping">Empaque reciclable y envios neutros</li>
           <li data-es="Transparencia en cada lote" data-en="Transparency in every batch">Transparencia en cada lote</li>
         </ul>
+        <div class="mini-reviews">
+          <p>"<span data-es="Mejoro mi rutina de cuidado en 2 semanas" data-en="Improved my skincare routine in 2 weeks">Mejoro mi rutina de cuidado en 2 semanas</span>"</p>
+          <small>- Camila, Madrid</small>
+        </div>
       </aside>
     </section>
   </header>
@@ -57,47 +72,63 @@
         <p data-es="Seleccion premium para rutina natural diaria." data-en="Premium selection for a daily natural routine.">Seleccion premium para rutina natural diaria.</p>
       </div>
 
-      <div class="product-grid">
-        <article class="product-card reveal">
-          <p class="tag" data-es="Infusion" data-en="Infusion">Infusion</p>
+      <div class="filters" id="filters">
+        <button class="filter-chip active" data-filter="all" data-es="Todo" data-en="All">Todo</button>
+        <button class="filter-chip" data-filter="infusion">Infusion</button>
+        <button class="filter-chip" data-filter="skincare">Skincare</button>
+        <button class="filter-chip" data-filter="oils">Aceites</button>
+        <button class="filter-chip" data-filter="supplement">Suplementos</button>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+        <article class="product-card reveal" data-category="infusion">
+          <p class="tag">Infusion</p>
           <h3 data-es="Tea Calm Botanico" data-en="Tea Calm Botanical">Tea Calm Botanico</h3>
           <p data-es="Mezcla natural de manzanilla, lavanda y tila." data-en="Natural blend of chamomile, lavender and linden.">Mezcla natural de manzanilla, lavanda y tila.</p>
           <div class="product-foot">
             <strong>€14 / $15</strong>
-            <button class="mini-btn" data-es="Agregar" data-en="Add">Agregar</button>
+            <button class="mini-btn add-cart" data-name="Tea Calm Botanico">Agregar</button>
           </div>
         </article>
 
-        <article class="product-card reveal">
-          <p class="tag" data-es="Skincare" data-en="Skincare">Skincare</p>
+        <article class="product-card reveal" data-category="skincare">
+          <p class="tag">Skincare</p>
           <h3 data-es="Serum Aloe + Vitamina C" data-en="Aloe + Vitamin C Serum">Serum Aloe + Vitamina C</h3>
           <p data-es="Textura ligera con ingredientes de origen vegetal." data-en="Light texture with plant-origin ingredients.">Textura ligera con ingredientes de origen vegetal.</p>
           <div class="product-foot">
             <strong>€24 / $26</strong>
-            <button class="mini-btn" data-es="Agregar" data-en="Add">Agregar</button>
+            <button class="mini-btn add-cart" data-name="Serum Aloe + Vitamina C">Agregar</button>
           </div>
         </article>
 
-        <article class="product-card reveal">
-          <p class="tag" data-es="Aceites" data-en="Oils">Aceites</p>
+        <article class="product-card reveal" data-category="oils">
+          <p class="tag">Aceites</p>
           <h3 data-es="Blend Esencial Focus" data-en="Essential Focus Blend">Blend Esencial Focus</h3>
           <p data-es="Sin fragancias sinteticas. Lote trazable." data-en="No synthetic fragrances. Traceable batch.">Sin fragancias sinteticas. Lote trazable.</p>
           <div class="product-foot">
             <strong>€18 / $19</strong>
-            <button class="mini-btn" data-es="Agregar" data-en="Add">Agregar</button>
+            <button class="mini-btn add-cart" data-name="Blend Esencial Focus">Agregar</button>
           </div>
         </article>
 
-        <article class="product-card reveal">
-          <p class="tag" data-es="Suplemento" data-en="Supplement">Suplemento</p>
+        <article class="product-card reveal" data-category="supplement">
+          <p class="tag">Suplemento</p>
           <h3 data-es="Magnesio Marino Natural" data-en="Natural Marine Magnesium">Magnesio Marino Natural</h3>
           <p data-es="Formato capsulas vegetales aptas para rutina diaria." data-en="Plant-capsule format suitable for daily routine.">Formato capsulas vegetales aptas para rutina diaria.</p>
           <div class="product-foot">
             <strong>€21 / $23</strong>
-            <button class="mini-btn" data-es="Agregar" data-en="Add">Agregar</button>
+            <button class="mini-btn add-cart" data-name="Magnesio Marino Natural">Agregar</button>
           </div>
         </article>
       </div>
+    </section>
+
+    <section class="container section feature-band reveal">
+      <article>
+        <h3 data-es="Test de rutina natural" data-en="Natural routine quiz">Test de rutina natural</h3>
+        <p data-es="Te recomendamos productos segun tu objetivo: energia, calma, foco o piel sensible." data-en="Get product recommendations by goal: energy, calm, focus or sensitive skin.">Te recomendamos productos segun tu objetivo: energia, calma, foco o piel sensible.</p>
+      </article>
+      <button class="btn" data-es="Empezar test" data-en="Start quiz">Empezar test</button>
     </section>
 
     <section class="container section info-grid reveal">
@@ -118,8 +149,26 @@
           <li><a href="admin.html" data-es="Panel de administracion" data-en="Admin dashboard">Panel de administracion</a></li>
         </ul>
       </article>
+
+      <article class="info-card newsletter">
+        <h3 data-es="Newsletter natural" data-en="Natural newsletter">Newsletter natural</h3>
+        <p data-es="Recibe lanzamientos, tips y descuentos privados." data-en="Get launches, tips and private discounts.">Recibe lanzamientos, tips y descuentos privados.</p>
+        <form>
+          <input type="email" placeholder="email@ejemplo.com" />
+          <button class="mini-btn" type="button" data-es="Suscribirme" data-en="Subscribe">Suscribirme</button>
+        </form>
+      </article>
     </section>
   </main>
+
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-head">
+      <h3 data-es="Tu carrito" data-en="Your cart">Tu carrito</h3>
+      <button id="closeCart" class="pill-link" type="button">X</button>
+    </div>
+    <ul id="cartItems"></ul>
+    <p id="cartEmpty" data-es="Aun no has agregado productos." data-en="You have not added products yet.">Aun no has agregado productos.</p>
+  </aside>
 
   <footer class="container footer">
     <p>VerdeVivo Market - 2026</p>
