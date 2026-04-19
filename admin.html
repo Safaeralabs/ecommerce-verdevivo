@@ -10,52 +10,178 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="panel">
-    <article class="page-card reveal in-view">
-      <h1>Panel de Administracion</h1>
-      <p>Vista del administrador para evidencia de gestion del e-commerce.</p>
-
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Pedido</th>
-            <th>Cliente</th>
-            <th>Producto</th>
-            <th>Estado</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>#2201</td>
-            <td>Maria R.</td>
-            <td>Tea Calm Botanico</td>
-            <td>En preparacion</td>
-            <td>€14</td>
-          </tr>
-          <tr>
-            <td>#2202</td>
-            <td>Noah T.</td>
-            <td>Serum Aloe + Vitamina C</td>
-            <td>Enviado</td>
-            <td>$26</td>
-          </tr>
-          <tr>
-            <td>#2203</td>
-            <td>Elena P.</td>
-            <td>Blend Esencial Focus</td>
-            <td>Entregado</td>
-            <td>€18</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="notice">
-        Requisito de la actividad: toma captura de esta pantalla y adjuntala como evidencia del administrador.
+  <main class="container admin-shell">
+    <header class="admin-header">
+      <div>
+        <p class="admin-kicker">Backoffice</p>
+        <h1>Panel de Administracion</h1>
+        <p class="admin-sub">Vista operativa de pedidos, inventario, clientes y soporte de VerdeVivo Market.</p>
       </div>
+      <div class="admin-actions">
+        <a class="pill-link" href="index.html">Ver tienda</a>
+        <a class="btn" href="#">Exportar reporte</a>
+      </div>
+    </header>
 
-      <p><a class="btn" href="index.html">Volver al inicio</a></p>
-    </article>
+    <section class="admin-layout">
+      <aside class="admin-sidebar admin-card">
+        <h2>Menu</h2>
+        <nav>
+          <a class="menu-item active" href="#">Resumen</a>
+          <a class="menu-item" href="#">Pedidos</a>
+          <a class="menu-item" href="#">Inventario</a>
+          <a class="menu-item" href="#">Clientes</a>
+          <a class="menu-item" href="#">Soporte</a>
+          <a class="menu-item" href="#">Marketing</a>
+        </nav>
+        <div class="notice compact">
+          Requisito de la actividad: captura esta pantalla para evidencia del administrador.
+        </div>
+      </aside>
+
+      <div class="admin-main">
+        <section class="kpi-grid">
+          <article class="admin-card kpi">
+            <p>Ventas de hoy</p>
+            <strong>€2,184</strong>
+            <span class="trend up">+12.4%</span>
+          </article>
+          <article class="admin-card kpi">
+            <p>Pedidos activos</p>
+            <strong>46</strong>
+            <span class="trend up">+8</span>
+          </article>
+          <article class="admin-card kpi">
+            <p>Tickets soporte</p>
+            <strong>9</strong>
+            <span class="trend down">-3</span>
+          </article>
+          <article class="admin-card kpi">
+            <p>Conversion</p>
+            <strong>3.9%</strong>
+            <span class="trend up">+0.5%</span>
+          </article>
+        </section>
+
+        <section class="admin-panels">
+          <article class="admin-card wide">
+            <div class="card-head">
+              <h2>Pedidos recientes</h2>
+              <a href="#">Ver todos</a>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Pedido</th>
+                  <th>Cliente</th>
+                  <th>Pais</th>
+                  <th>Estado</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#3310</td>
+                  <td>Emma Ruiz</td>
+                  <td>Espana</td>
+                  <td><span class="status preparing">Preparando</span></td>
+                  <td>€48</td>
+                </tr>
+                <tr>
+                  <td>#3309</td>
+                  <td>Oliver Hart</td>
+                  <td>USA</td>
+                  <td><span class="status shipped">Enviado</span></td>
+                  <td>$72</td>
+                </tr>
+                <tr>
+                  <td>#3308</td>
+                  <td>Laura Silva</td>
+                  <td>Portugal</td>
+                  <td><span class="status delivered">Entregado</span></td>
+                  <td>€31</td>
+                </tr>
+                <tr>
+                  <td>#3307</td>
+                  <td>Daniel Vega</td>
+                  <td>Mexico</td>
+                  <td><span class="status preparing">Preparando</span></td>
+                  <td>$57</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+
+          <article class="admin-card">
+            <div class="card-head">
+              <h2>Tickets de soporte</h2>
+              <a href="#">Abrir bandeja</a>
+            </div>
+            <ul class="stack-list">
+              <li>
+                <strong>Pago rechazado</strong>
+                <span>hace 14 min</span>
+              </li>
+              <li>
+                <strong>Consulta de alergeno</strong>
+                <span>hace 22 min</span>
+              </li>
+              <li>
+                <strong>Cambio de direccion</strong>
+                <span>hace 41 min</span>
+              </li>
+              <li>
+                <strong>Estado de envio</strong>
+                <span>hace 1 h</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="admin-card">
+            <div class="card-head">
+              <h2>Inventario critico</h2>
+              <a href="#">Gestionar</a>
+            </div>
+            <ul class="stock-list">
+              <li>
+                <div>
+                  <strong>Tea Calm Botanico</strong>
+                  <span>12 unidades</span>
+                </div>
+                <div class="stock-bar"><span style="width: 24%"></span></div>
+              </li>
+              <li>
+                <div>
+                  <strong>Blend Esencial Focus</strong>
+                  <span>8 unidades</span>
+                </div>
+                <div class="stock-bar"><span style="width: 16%"></span></div>
+              </li>
+              <li>
+                <div>
+                  <strong>Serum Aloe + Vit C</strong>
+                  <span>22 unidades</span>
+                </div>
+                <div class="stock-bar"><span style="width: 44%"></span></div>
+              </li>
+            </ul>
+          </article>
+
+          <article class="admin-card">
+            <div class="card-head">
+              <h2>Actividad</h2>
+              <a href="#">Logs</a>
+            </div>
+            <ul class="timeline">
+              <li>Campana "Bienestar Abril" activada.</li>
+              <li>Nuevo pedido #3310 desde Espana.</li>
+              <li>Stock actualizado: Magnesio Marino.</li>
+              <li>Ticket #894 cerrado con CSAT 5/5.</li>
+            </ul>
+          </article>
+        </section>
+      </div>
+    </section>
   </main>
 </body>
 </html>
